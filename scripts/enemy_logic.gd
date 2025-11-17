@@ -1,6 +1,7 @@
 class_name EnemyLogic
 extends CharacterBody2D
 
+
 const ENEMY_SPEED = 200.0
 
 @export var enemy_recipe: EnemyData
@@ -15,7 +16,7 @@ func _ready() -> void:
 		sprite_2d.texture = enemy_recipe.sprite_texture
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction = (player.global_position - global_position).normalized()
 	velocity = direction * enemy_recipe.speed
 	move_and_slide()

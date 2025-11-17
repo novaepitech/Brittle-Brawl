@@ -18,6 +18,7 @@ weapon_recipe = ExtResource("3_k0juu")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GrabHint" type="Label" parent="."]
+visible = false
 offset_left = 542.0
 offset_top = 522.0
 offset_right = 665.0
