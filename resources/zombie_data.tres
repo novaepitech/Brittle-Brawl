@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://dqvjjnw4ukxxb"]
+
+[ext_resource type="Script" uid="uid://cdqyg8hheprsi" path="res://scripts/enemy_data.gd" id="1_m2xgt"]
+[ext_resource type="Texture2D" uid="uid://blm1jswi4bdtv" path="res://assets/zombie.png" id="2_hbrb6"]
+
+[resource]
+script = ExtResource("1_m2xgt")
+hp = 3
+speed = 75
+sprite_texture = ExtResource("2_hbrb6")
+metadata/_custom_type_script = "uid://cdqyg8hheprsi"

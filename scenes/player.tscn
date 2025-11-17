@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu1hb0huf2pkr"]
+
+[ext_resource type="Script" uid="uid://mvat5dpkjaij" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://c66l8xhuhk5f5" path="res://assets/player.png" id="2_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(44, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(38, 54)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_g2els")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Player" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_g2els")
+
+[node name="Weapon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(26.999998, 23.000002)
+rotation = 0.2617994
+scale = Vector2(0.3, 0.3)
+
+[node name="AttackHitboxArea" type="Area2D" parent="."]
+
+[node name="AttackHitboxCollision" type="CollisionShape2D" parent="AttackHitboxArea"]
+position = Vector2(52, 4)
+shape = SubResource("RectangleShape2D_qhqgy")
+disabled = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="area_entered" from="AttackHitboxArea" to="." method="_on_attack_hitbox_area_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

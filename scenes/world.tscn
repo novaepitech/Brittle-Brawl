@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8r3pcvcva8nf"]
+
+[ext_resource type="PackedScene" uid="uid://cu1hb0huf2pkr" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://bla8ssguli356" path="res://scenes/weapon_pickup.tscn" id="2_4wyf3"]
+[ext_resource type="Resource" uid="uid://deolch1v8t3mk" path="res://resources/bottle_data.tres" id="3_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dsrxoie8nhonw" path="res://scenes/enemy_logic.tscn" id="4_71j4m"]
+[ext_resource type="Resource" uid="uid://dqvjjnw4ukxxb" path="res://resources/zombie_data.tres" id="5_qfnet"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(542, 277)
+
+[node name="WeaponPickup" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(797, 393)
+weapon_recipe = ExtResource("3_k0juu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GrabHint" type="Label" parent="."]
+offset_left = 542.0
+offset_top = 522.0
+offset_right = 665.0
+offset_bottom = 545.0
+text = "Press E to grab"
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemyLogic" parent="." instance=ExtResource("4_71j4m")]
+position = Vector2(728, 170)
+enemy_recipe = ExtResource("5_qfnet")

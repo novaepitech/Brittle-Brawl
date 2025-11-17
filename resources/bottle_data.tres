@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://deolch1v8t3mk"]
+
+[ext_resource type="Script" uid="uid://vxq4e2w1takj" path="res://scripts/weapon_data.gd" id="1_ld25q"]
+[ext_resource type="Texture2D" uid="uid://cl4uvc58s0uhs" path="res://icon.svg" id="2_xuwyg"]
+
+[resource]
+script = ExtResource("1_ld25q")
+weapon_name = "Bottle"
+durability = 1
+sprite_texture = ExtResource("2_xuwyg")
